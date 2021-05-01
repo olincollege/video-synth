@@ -19,7 +19,6 @@ class YtController(SongController):
     """
     """
     def create_file_path(self):
-        file_path = 'audio_files/%(title)s.%(ext)s'
         yt_url = input('Paste in a youtube link that you want to visualize!')
 
         ydl_opts = {
@@ -29,11 +28,14 @@ class YtController(SongController):
                 'preferredcodec': 'mp3',
                 'preferredquality': '192',
             }],
-            'outtmpl': file_path,
+            'outtmpl': 'audio_files/%(title)s.%(ext)s',
         }
-
+        
         with YoutubeDL(ydl_opts) as ydl:
             ydl.download([yt_url])
+
+        file_path = input('Paste the title of the youtube video')
+        file_path = 'audio_files/'+file_path+'.mp3'
         self.visual_synth.set_filepath(file_path)
 class Mp3Controller(SongController):
     """
