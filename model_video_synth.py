@@ -39,11 +39,10 @@ class VideoSynth:
         self._harmonic = chroma_harmonic
         self._onset_beat_strength = librosa.util.normalize(onset_env)
         self._tempo = tempo
-        print(f'{len(self._harmonic)} and {len(self._onset_beat_strength)}')
-
-        #self._audio_features_list = LibRosa Data File
-
-    @property
+        maxInRows = np.amax(self._harmonic, axis=0)
+        result = np.where(self._harmonic == np.amax(self._harmonic))
+        self._audio_features_list = [self._onset_beat_strength,result[0]]
+    
     def tempo(self):
         return self._tempo
         
