@@ -3,6 +3,7 @@ from processing_py import *
 import math
 import random
 from perlin_noise import PerlinNoise
+from tqdm import tqdm
 
 class VideoSynthView(ABC):
     """
@@ -121,16 +122,18 @@ class ProcessingView3(VideoSynthView):
         center_y = 300
     
         noise_incremementer = 1
-        frame_count = 20
-        for feature_index in range(len(audio_features)-1):
+        frame_count = 1
+        audio_features_list_length = len(audio_features[0])-1
+        for feature_index in tqdm(range(0, audio_features_list_length,2)):
             for frame_index in range(frame_count):
                 app.stroke(random.randint(0,255),random.randint(0,255),random.randint(0,255),70)  
                 noise_incremementer += 1
                 app.beginShape()
                 for i in range(0,361,9): # 0,361,9 ~ 30FPS 0,451,45 ~ 50FPS
 
-                    r = frame_index*(audio_features[feature_index+1]-audio_features[feature_index])/frame_count 
-                    r += audio_features[feature_index]
+                    #r = frame_index*(audio_features[feature_index+1]-audio_features[feature_index])/frame_count 
+                    #r += audio_features[feature_index]
+                    r = 50 + 200 * audio_features[1][feature_index]
                     radius = 2*r + r * noise([i/100,float(noise_incremementer)/150])
                     x = center_x + radius * math.cos(math.radians(i)) 
                     y = center_y + radius * math.sin(math.radians(i))
@@ -139,4 +142,5 @@ class ProcessingView3(VideoSynthView):
 
                 app.endShape("CLOSE")
                 app.redraw()
-                app.background(0,0,0)
+                #app.background(0,0,0)
+                

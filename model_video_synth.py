@@ -35,8 +35,8 @@ class VideoSynth:
         chroma_harmonic = librosa.feature.chroma_cqt(y=y_harmonic, sr=sr, bins_per_octave=36)
         onset_env = librosa.onset.onset_strength(y, sr=sr, aggregate=np.median)
         tempo = librosa.beat.beat_track(y=y_percussive, sr=sr, onset_envelope=onset_env)
-
-        self._harmonic = chroma_harmonic
+        
+        self._harmonic = chroma_harmonic.flatten()
         self._onset_beat_strength = librosa.util.normalize(onset_env)
         self._tempo = tempo
         maxInRows = np.amax(self._harmonic, axis=0)
