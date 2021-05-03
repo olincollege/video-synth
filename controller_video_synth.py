@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 import sys
 from youtube_dl import YoutubeDL
+import soundfile
 
 class SongController:
     """
@@ -19,7 +20,7 @@ class YtController(SongController):
     """
     """
     def create_file_path(self):
-        yt_url = input('Paste in a youtube link that you want to visualize!')
+        yt_url = input('Paste in a youtube link that you want to visualize! ')
 
         ydl_opts = {
             'format': 'bestaudio/best',
@@ -33,14 +34,13 @@ class YtController(SongController):
         
         with YoutubeDL(ydl_opts) as ydl:
             ydl.download([yt_url])
-
-        file_path = input('Paste the title of the youtube video')
+        file_path = input('Paste the title of the youtube video! ')
         file_path = 'audio_files/'+file_path+'.mp3'
         self.visual_synth.set_filepath(file_path)
 class Mp3Controller(SongController):
     """
     """
     def create_file_path(self):
-        file_path = input('Paste in the file path of the mp3 you want to visualize!')
+        file_path = input('Paste in the file path of the mp3 you want to visualize! ')
         self.visual_synth.set_filepath(file_path)
     

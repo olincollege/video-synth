@@ -41,72 +41,8 @@ class VideoSynthView(ABC):
         Abstract method for drawing the video synth.
         """
         pass
-class ProcessingView(VideoSynthView):
-    """
-    """
-
-    def draw(self):
-        """
-        Drawing method for text view of the Video Synthesizer.
-        """
-        app = self.processing_app
-        noise = PerlinNoise(octaves=3)
-        center_x = 300
-        center_y = 300
-    
-        noise_incremementer = 1
-        frame_count = 300
-
-        for c in range(frame_count):
-            app.stroke(random.randint(0,255),random.randint(0,255),random.randint(0,255),70)  
-            noise_incremementer += 1
-            app.beginShape()
-            for i in range(0,361,9): # 0,361,9 ~ 30FPS 0,451,45 ~ 50FPS
-
-                radius = 200 + 100 * noise([i/100,float(noise_incremementer)/150])
-                x = center_x + radius * math.cos(math.radians(i)) 
-                y = center_y + radius * math.sin(math.radians(i))
-        
-                app.curveVertex(x,y)
-
-            app.endShape("CLOSE")
-            app.redraw()
-            
-class ProcessingView2(VideoSynthView):
-    """
-    """
-
-    def draw(self):
-        """
-        Drawing method for text view of the Video Synthesizer.
-        """
-        app = self.processing_app
-        audio_features = self.audio_features
-        
-        noise = PerlinNoise(octaves=3)
-        center_x = 300
-        center_y = 300
-    
-        noise_incremementer = 1
-        frame_count = 10
-        for z in audio_features:
-            
-            for c in range(frame_count):
-                app.stroke(random.randint(0,255),random.randint(0,255),random.randint(0,255),70)  
-                noise_incremementer += 1
-                app.beginShape()
-                for i in range(0,361,9): # 0,361,9 ~ 30FPS 0,451,45 ~ 50FPS
-
-                    radius = 2*z + z * noise([i/100,float(noise_incremementer)/150])
-                    x = center_x + radius * math.cos(math.radians(i)) 
-                    y = center_y + radius * math.sin(math.radians(i))
-        
-                    app.curveVertex(x,y)
-
-                app.endShape("CLOSE")
-                app.redraw()
                 
-class ProcessingView3(VideoSynthView):
+class ProcessingView(VideoSynthView):
     """
     """
 
@@ -125,8 +61,8 @@ class ProcessingView3(VideoSynthView):
         frame_count = 1
         colors = {0:(240,58,58), 1:(240, 119, 58), 2:(240,170,58), 3:(240, 213, 58), 4:(234, 240, 58), 5:(198, 240, 58), 6:(131, 240, 58), 7:(58, 240, 97), 8:(58, 240, 207), 9:(58, 219, 240), 10:(58, 134, 240), 11:(82, 58, 240)}
         audio_features_list_length = len(audio_features[0])-1
-        for feature_index in tqdm(range(0, audio_features_list_length,4)):
-            app.stroke(colors[audio_features[1][feature_index]][0],colors[audio_features[1][feature_index]][1],colors[audio_features[1][feature_index]][2])
+        for feature_index in tqdm(range(0, audio_features_list_length,3)):
+            app.stroke(colors[audio_features[1][feature_index]][0],colors[audio_features[1][feature_index]][1],colors[audio_features[1][feature_index]][2],34)
             noise_incremementer += 1
             app.beginShape()
             for i in range(0,361,18): # 0,361,9 ~ 30FPS 0,451,45 ~ 50FPS
@@ -141,4 +77,35 @@ class ProcessingView3(VideoSynthView):
             app.endShape("CLOSE")
             app.redraw()
             app.background(0,0,0)
-            
+
+class ProcessingAnimationView(VideoSynthView):
+    def draw(self):
+        """
+        Drawing method for text view of the Video Synthesizer.
+        """
+        app = self.processing_app
+        audio_features = self.audio_features
+        
+        noise = PerlinNoise(octaves=3)
+        center_x = 400
+        center_y = 400
+    
+        noise_incremementer = 1
+        colors = {0:(240,58,58), 1:(240, 119, 58), 2:(240,170,58), 3:(240, 213, 58), 4:(234, 240, 58), 5:(198, 240, 58), 6:(131, 240, 58), 7:(58, 240, 97), 8:(58, 240, 207), 9:(58, 219, 240), 10:(58, 134, 240), 11:(82, 58, 240)}
+        audio_features_list_length = len(audio_features[0])-1
+        for feature_index in tqdm(range(0, audio_features_list_length,3)):
+            app.stroke(colors[audio_features[1][feature_index]][0],colors[audio_features[1][feature_index]][1],colors[audio_features[1][feature_index]][2])
+            noise_incremementer += 1
+            app.beginShape()
+            for i in range(0,361,18): # 0,361,9 ~ 30FPS 0,451,45 ~ 50FPS
+                r = 10 + 500 * audio_features[0][feature_index]
+                
+                radius = 2*r + r * noise([i/100,float(noise_incremementer)/150])
+                x = center_x + radius * math.cos(math.radians(i)) 
+                y = center_y + radius * math.sin(math.radians(i))
+    
+                app.curveVertex(x,y)
+
+            app.endShape("CLOSE")
+            app.redraw()
+            app.background(0,0,0)
