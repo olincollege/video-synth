@@ -36,12 +36,12 @@ class VideoSynth:
         onset_env = librosa.onset.onset_strength(y, sr=sr, aggregate=np.median)
         tempo = librosa.beat.beat_track(y=y_percussive, sr=sr, onset_envelope=onset_env)
         
-        self._harmonic = chroma_harmonic.flatten()
+        self._harmonic = chroma_harmonic
         self._onset_beat_strength = librosa.util.normalize(onset_env)
         self._tempo = tempo
-        maxInRows = np.amax(self._harmonic, axis=0)
-        result = np.where(self._harmonic == np.amax(self._harmonic))
-        self._audio_features_list = [self._onset_beat_strength,result[0]]
+        
+        maxInRows = np.argmax(self._harmonic, axis=0)
+        self._audio_features_list = [self._onset_beat_strength,maxInRows]
     
     def tempo(self):
         return self._tempo
