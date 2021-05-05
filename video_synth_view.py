@@ -76,7 +76,6 @@ class ProcessingView(VideoSynthView):
 
             app.endShape("CLOSE")
             app.redraw()
-            app.background(0,0,0)
 
 class ProcessingAnimationView(VideoSynthView):
     def draw(self):
@@ -103,7 +102,6 @@ class ProcessingAnimationView(VideoSynthView):
                 radius = 2*r + r * noise([i/100,float(noise_incremementer)/150])
                 x = center_x + radius * math.cos(math.radians(i)) 
                 y = center_y + radius * math.sin(math.radians(i))
-    
                 app.curveVertex(x,y)
 
             app.endShape("CLOSE")
