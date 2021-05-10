@@ -28,4 +28,6 @@ We researched many musical, visual, and data manipulation and storage Python lib
   * tqdm provides the user with a progress bar for the art generation
 
 ## How you can use it! 
+Installation and usage instructions can be found in the [README](https://github.com/olincollege/video-synth/blob/main/README.md) file of our repository. Once you install our repository you will also need to install all of the libraries mentioned in the README. After this use the terminal commands listed to start visualizing audio. Make sure to read these instructions, then you can install all of the files necessary by going to our [repository](https://github.com/olincollege/video-synth) and cloning it, or clicking the link below!
 
+<a href="video-synth-main.zip">Download .zip file</a>
