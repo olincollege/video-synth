@@ -1,7 +1,7 @@
 # Read Me - Video Synth
 
 ## Project Summary
-Video Synth is a python-based program that analyzes an mp3 file and uses key audio features from that file to draw or animate a Perlin flower. The goal of this program was to visualize audio in a visually appealing way while exploring regenerative art and audio processing libraries. Mp3 files can be provided with a direct file path or downloaded with a youtube link. Audio features used to generate the Perlin flower are the beat onset, the beat onset strength, and the pitch class. The beat onset is used to determine when a ring of the flower is drawn, the beat onset strength is used to determine the radius of the circle, and the pitch class is used to determine the color of the ring.
+Video Synth is a python-based program that analyzes an mp3 file and uses key audio features from that file to draw or animate a Perlin flower. The goal of this program was to visualize audio in an appealing way while exploring regenerative art and audio processing libraries. Mp3 files can be provided with a direct file path or downloaded with a youtube link. Audio features used to generate the Perlin flower are the beat onset, the beat onset strength, and the pitch class. The beat onset is used to determine when a ring of the flower is drawn, the beat onset strength is used to determine the radius of the circle, and the pitch class is used to determine the color of the ring.
 
 ## Libraries
 The following is the list of libraries that need to be downloaded to use our program.
