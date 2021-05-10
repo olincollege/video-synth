@@ -5,7 +5,7 @@ As lovers of all things music and Python, we wanted to find a way for people to 
 *The audio for this visualization can be found [here.](https://bit.ly/3o48JSg)*
 
 ## What we did: 
-We created a program that processes a user inputted .mp3 file, extracts a few key audio features from the file, and maps these features to various characteristics of a [perlin noise flower](https://www.benfrederickson.com/flowers-from-simplex-noise/) that is generated(example of this visual can be seen above).
+We created a program that processes a user inputted .mp3 file, extracts a few key audio features from the file, and maps these features to various characteristics of a [perlin noise flower](https://www.benfrederickson.com/flowers-from-simplex-noise/) that is generated (example of this visual can be seen above).
 
 ## How does it all work? 
 When processing an audio file and generating the flower, our program extracts data representing: 
@@ -34,7 +34,9 @@ We researched many musical, visual, and data manipulation and storage Python lib
 ## How you can use it! 
 Installation and usage instructions can be found in the usage section of the [README](https://github.com/olincollege/video-synth#usage) file of our repository. Once you install our repository you will also need to install all of the external libraries mentioned in the readme. After this use the terminal commands described in the readme to start visualizing audio. Make sure to read the instructions in the readme first, then you can install all of the files necessary by going to our [repository](https://github.com/olincollege/video-synth) and cloning it, or clicking the link below!
 
-<a href="video-synth-main.zip">Download .zip file</a>
+**<a href="video-synth-main.zip">Download .zip file</a>**
+
+
 
 ![Visualization of a cover of Daft Punk's song, Harder, Better, Faster stronger](daft_punk_visual.png)
 *Visualization of [a cover of Daft Punk's Harder, Better, Faster, Stronger](https://youtu.be/RHu0ALxqUIo)*
