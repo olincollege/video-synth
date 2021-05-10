@@ -10,6 +10,7 @@ The following is the list of libraries that need to be downloaded in order to us
 * Youtube-DL - https://youtube-dl.org/
 * Perlin-Noise - https://pypi.org/project/perlin-noise/
 * tqdm - https://pypi.org/project/tqdm/
+* FFmpeg - https://www.ffmpeg.org/
 
 Other libraries that are used:
 * ArgParse
@@ -21,6 +22,8 @@ Other libraries that are used:
 No Changes are needed to run this program.  
 
 ## Usage
+Install all the files found in this github repository.
+
 In a python environment run the file `video_synth.py`.
 Our program has various options which can be explored at any time by running `video_synth.py -h` or `video_synth.py --help`
 
@@ -37,3 +40,6 @@ Our program has various options which can be explored at any time by running `vi
 `video_synth.py --youtube --animation` | Generates an animation from a YouTube link.  
 `video_synth.py -h` | Displays a help menu.  
 `video_synth.py --help` | Displays a help menu.  
+
+#### Contact
+Feel free to reach out to us at *pythonvisualsynthesizer@gmail.com* if you have any comments or questions.
