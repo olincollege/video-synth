@@ -1,37 +1,39 @@
-## Welcome to GitHub Pages
+# Read Me - Video Synth
 
-You can use the [editor on GitHub](https://github.com/olincollege/video-synth/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+## Project Summary
+Video Synth is a python based program which analyzes an mp3 file and uses key audio features to from that file to draw or animate a perlin flower. The goal of this program was to visualize audio in a visually appealing way while exploring regenerative art and audio processing libararies. Mp3 files can be provided with a direct file path or downloaded with a youtube link. Audio features used to generate the perlin flower are the beat onset, the beat onset strength, and the pitch class. The beat onset is used to deterimine when a ring of the flower is drawn, the beat onset strength is used to determine the raidus of the ring, and the pitch class is used to determine the color of the ring.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Libraries
+The following is the list of libraries that need to be downloaded in order to use our program.
+* Librosa - https://librosa.org/doc/main/index.html
+* Processing-py - https://py.processing.org/
+* Youtube-DL - https://youtube-dl.org/
+* Perlin-Noise - https://pypi.org/project/perlin-noise/
+* tqdm - https://pypi.org/project/tqdm/
 
-### Markdown
+Other libraries that are used:
+* ArgParse
+* abc
+* numpy
+* math
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Code Changes
+No Changes are needed to run this program.  
 
-```markdown
-Syntax highlighted code block
+## Usage
+In a python environment run the file `video_synth.py`.
+Our program has various options which can be explored at any time by running `video_synth.py -h` or `video_synth.py --help`
 
-# Header 1
-## Header 2
-### Header 3
+### Commands
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/olincollege/video-synth/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+`video_synth.py` | Runs the default video synth. Generates a still image from the file path of an mp3 file.  
+`video_synth.py -y` | Generates a still image from a YouTube link.  
+`video_synth.py --youtube` | Generates a still image from a YouTube link.  
+`video_synth.py -a` | Generates an animation from the file path of an mp3 file.  
+`video_synth.py --animation` | Generates an animation from the file path of an mp3 file.  
+`video_synth.py -y -a` | Generates an animation from a YouTube link.  
+`video_synth.py -y --animation` | Generates an animation from a YouTube link.  
+`video_synth.py --youtube -a` | Generates an animation from a YouTube link.  
+`video_synth.py --youtube --animation` | Generates an animation from a YouTube link.  
+`video_synth.py -h` | Displays a help menu.  
+`video_synth.py --help` | Displays a help menu.  
