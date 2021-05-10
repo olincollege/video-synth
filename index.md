@@ -1,7 +1,7 @@
 ## Our objective:
 As lovers of all things music and Python, we wanted to find a way for people to visualize audio easily in a format that is both pleasing to the eye and meaningful.
 
-![Pop song visualization](perlin_flower_in_c#.PNG)
+![Pop song visualization](popVisual.PNG)
 *The audio for this visualization can be found [here.](https://bit.ly/3o48JSg)*
 
 ## What we did: 
